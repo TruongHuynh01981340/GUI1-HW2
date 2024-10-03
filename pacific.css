@@ -1,0 +1,179 @@
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+}
+
+/*
+	Display gradient picture as background and change background color
+	and text front and color.
+*/
+body {
+	background-image: url("ptrbackground.jpg");
+	background-color: #00569f;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #666666;
+}
+
+/*
+	Set header as one of the grid area that will be use to position elements.
+*/
+header {
+	grid-area: header;
+}
+
+/*
+	Set nav as one of the grid area that will be use to position elements.
+	Add min-width so the box won't be too small that it will overlay with
+	the links.
+*/
+nav {
+	grid-area: nav;
+	background-color: lightskyblue;
+	min-width: 190px;
+}
+
+/* Remove link underline and add padding left to match capture. */
+nav ul {
+	list-style: none;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #000033;
+	padding-left: 20px;
+}
+
+/* For link, visited, hover and active, remove link underline */
+nav ul a:link {
+	text-decoration: none;
+	color: #000033;
+}
+
+nav ul a:visited {
+	text-decoration: none;
+	color: #000033;
+}
+
+nav ul a:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+nav ul a:active {
+	text-decoration: none;
+}
+
+/* To make the heading, it's a trick since the background is just black
+and I have to position the image right and have no-repeat because otherwise
+there will be multiple of the same image spanning the header.
+*/
+h1 {
+	color:white;
+	background-color: #000033;
+	background-image: url("sunset.jpg");
+	background-position: right;
+	background-repeat: no-repeat;
+	margin-bottom: 0;
+	padding: 10px;
+}
+
+h2 {
+	color: #3399CC;
+	margin-left: 30px;
+}
+
+/*
+	Change both headers to the family font
+*/
+h1, h2 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+/*
+	Set contact as one of the grid area that will be use to position elements.
+*/
+#contact {
+	grid-area: footer;
+	font-size: 90%;
+	margin-left: 30px;
+	margin-bottom: 40px;
+}
+
+/*
+	Set footer as one of the grid area that will be use to position elements.
+	And change many variables including making it italics.
+*/
+footer {
+	grid-area: footer;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 12px;
+	background-color: white;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	font-style: italic;
+}
+
+/*
+	Only making the "Pacific Trails Resort" bold.
+*/
+.resort {
+	color: #00569f;
+	font-weight: bold;
+}
+
+/*
+	This is important when the page is smaller since it will add padding
+	to make the text not flush against the border.
+*/
+p {
+	padding-left: 30px;
+}
+
+#content {
+	grid-area: content;
+	background-color: white;
+	padding-right: 20px;
+}
+
+/* 
+	This will make the bullet points lined up with the title above.
+*/
+#content ul {
+	list-style-position: inside;
+}
+
+/*
+	Adding image for the bullet point
+*/
+#content ul li {
+	list-style-image: url("marker.gif");
+	padding-left: 30px;
+}
+
+/*
+	Image is float: left to be able to let the content text to go to the
+	right rather than the bottom by default
+*/
+#content img {
+	float: left;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+/*
+	Very important as it allowed for the different grid of content to be
+	position the same as the capture.
+
+	There's also the min-width that stop the auto margin from dynamic sizing when
+	the page is too small.
+
+	Also, main are is 80% of page with with 600px minimum. And it's
+	centered using margin auto
+*/
+#wrapper {
+	display: grid;
+	grid-template-areas: 
+		"header header"
+		"nav content"
+		"nav footer";
+	min-width: 600px;
+	width: 80%;
+	margin: auto;
+}
